@@ -19,15 +19,23 @@
     #include <dirent.h>
 // STRUCT:
 
+    typedef struct list {
+        int arrow_pos;
+    } list_t;
+
     typedef struct global {
-        int test;
+        list_t list;
     } global_t;
 
 // MACROS:
 
+    #define arrow_pos global->list.arrow_pos
+
+
 // FUNCTIONS:
 
     void init_window(global_t *global);
+    void start_page(global_t *global);
     void page_disp(global_t *global);
 
 #endif
