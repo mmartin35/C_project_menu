@@ -28,7 +28,6 @@
 // FUNCTIONS:
 
     void init_window(global_t *global);
-
-    void start_page(global_t *global);
+    void page_disp(global_t *global);
 
 #endif
