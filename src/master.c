@@ -11,6 +11,7 @@
 int main()
 {
     main_menu();
+    return 0;
 }
 
 void main_menu()
