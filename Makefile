@@ -18,13 +18,7 @@ CFLAGS	+=	-Wall -Wundef -g -lncurses
 
 all:	$(OBJ)
 	ar rc $(NAME) $(OBJ)
-	$(CC) -o selector ./src/master.c ./libmy.a $(CFLAGS)
+	$(CC) -o menu ./src/master.c ./libmy.a $(CFLAGS)
 	rm -r $(OBJ) ./libmy.a
-
-clean:
-	rm -r $(OBJ)
-
-fclean: clean
-	rm -r ./libmy.a ./antman
 
 re:     fclean all

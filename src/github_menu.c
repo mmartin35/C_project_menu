@@ -1,6 +1,6 @@
 /*
 ** Language        : C
-** Title           : master.c
+** Title           : github_menu.c
 ** File description:
 ** <------------------------------------------->
 ** Made by         : matthieu1.martin@epitech.eu
@@ -8,21 +8,15 @@
 */
 #include "../include/global.h"
 
-int main()
-{
-    main_menu();
-}
-
-void main_menu()
-{
+void github_menu() {
     WINDOW *win;
-    char list[7][7] = { "GetAll", "GetMin", "Header", "CStyle", "Github", "Intra", "Exit" };
+    char list[4][7] = { "Page", "Auto", "Man", "Back" };
     char item[8];
     int ch, i = 0;
     initscr();
     win = newwin(10, 12, 1, 1);
     box(win, 0, 0);
-    for (i = 0; i < 7; i++) {
+    for (i = 0; i < 4; i++) {
         if (i == 0)
             wattron(win, A_STANDOUT);
         else
@@ -41,11 +35,11 @@ void main_menu()
         switch (ch) {
 		case KEY_UP:
 			i--;
-			i = (i < 0) ? 6 : i;
+			i = (i < 0) ? 3 : i;
 			break;
 		case KEY_DOWN:
 			i++;
-			i = (i > 6) ? 0 : i;
+			i = (i > 3) ? 0 : i;
 			break;
         }
         wattron(win, A_STANDOUT);
@@ -55,32 +49,23 @@ void main_menu()
     }
     delwin(win);
     endwin();
-    setup_options(i);
+    github_options(i);
 }
 
-void setup_options(int i)
+void github_options(int i)
 {
     switch (i) {
 	    case 0:
-		    system("cp ~/GIT/epitech_src/GET_LIB/* .");
+		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("cp ~/GIT/epitech_src/GET_LIB/Makefile .");
+		    system("~/GIT/dotfile/scripts/utils/github/classic.sh");
 		    break;
 	    case 2:
-		    system("~/GIT/dotfile/scripts/epitech/builders/builderC.sh");
+		    system("~/GIT/dotfile/scripts/utils/github/manual.sh");
 		    break;
 	    case 3:
-		    system("~/GIT/dotfile/scripts/epitech/coding-style-checker/coding-style.sh . .");
-		    break;
-	    case 4:
-		    github_menu();
-		    break;
-	    case 5:
-		    intra_menu();
-		    break;
-	    case 6:
-		    system("");
+		    main_menu();
 		    break;
     }
 }
