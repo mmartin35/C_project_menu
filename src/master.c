@@ -4,78 +4,77 @@
 ** File description:
 ** <------------------------------------------->
 ** Made by         : matthieu1.martin@epitech.eu
-** Creation date   : 23/12/2022 at 19:11:36
+** Creation date   : 18/01/2023 at 12:38:26
 */
+#include "../include/global.h"
 
-#include "../include/terminal_ui.h"
-
-int main(int argc, char **argv)
-{
-    global_t global = {0};
-    init_window(&global);
-    return 0;
-}
-
-void init_window(global_t *global)
-{
-    int ch;
+int main() {
+    WINDOW *win;
+    char list[7][7] = { "GetAll", "GetMin", "Header", "CStyle", "Github", "Intra", "Exit" };
+    char item[8];
+    int ch, i = 0;
     initscr();
-    raw();
-    keypad(stdscr, TRUE);
+    win = newwin(10, 12, 1, 1);
+    box(win, 0, 0);
+    for (i = 0; i < 7; i++) {
+        if (i == 0)
+            wattron(win, A_STANDOUT);
+        else
+            wattroff(win, A_STANDOUT);
+        sprintf(item, "%-7s",  list[i]);
+        mvwprintw(win, i + 1, 2, "%s", item);
+    }
+    wrefresh(win);
+    i = 0;
     noecho();
-    start_page(global);
-    while ((ch = getch()) != 27) {
+    keypad(win, TRUE);
+    curs_set(0);
+    while ((ch = wgetch(win)) != 10) {
+        sprintf(item, "%-7s",  list[i]);
+        mvwprintw(win, i + 1, 2, "%s", item);
         switch (ch) {
-            case KEY_LEFT:
-                    arrow_pos--;
-                    break;
-            case KEY_RIGHT:
-                    arrow_pos++;
-                    break;
+		case KEY_UP:
+			i--;
+			i = (i < 0) ? 6 : i;
+			break;
+		case KEY_DOWN:
+			i++;
+			i = (i > 6) ? 0 : i;
+			break;
         }
-        page_disp(global);
+        wattron(win, A_STANDOUT);
+        sprintf(item, "%-7s",  list[i]);
+        mvwprintw(win, i + 1, 2, "%s", item);
+        wattroff(win, A_STANDOUT);
     }
+    delwin(win);
     endwin();
+    setup_options(i);
 }
 
-void start_page(global_t *global)
+void setup_options(int i)
 {
-    refresh();
-    clear();
-    printw("Welcome to this terminal file tool...\n Press any key to open. (esc to end));");
-}
-
-void page_disp(global_t *global)
-{
-    refresh();
-    clear();
-    struct dirent **namelist;
-    int n = scandir(".", &namelist, NULL, alphasort);
-    int len = 0;
-    int count = 0;
-    printw("\n");
-    while ((n--) - 2) {
-        printw("  %s  ", namelist[n]->d_name);
-        free(namelist[n]);
+    switch (i) {
+	    case 0:
+		    system("cp ~/GIT/epitech_src/GET_LIB/* .");
+		    break;
+	    case 1:
+		    system("cp ~/GIT/epitech_src/GET_LIB/Makefile .");
+		    break;
+	    case 2:
+		    system("~/GIT/dotfile/scripts/epitech/builders/builderC.sh");
+		    break;
+	    case 3:
+		    system("~/GIT/dotfile/scripts/epitech/coding-style-checker/coding-style.sh . .");
+		    break;
+	    case 4:
+		    system("firefox --new-window https://github.com/ &");
+		    break;
+	    case 5:
+		    system("firefox --new-window https://intra.epitech.eu/ &");
+		    break;
+	    case 6:
+		    system("");
+		    break;
     }
-    printw("\n  ");
-    for (int i = 2; i != 8; i++) {
-        for (int j = 0; j <= (strlen(namelist[i]->d_name) - 1); j++)
-            count++;
-        if (arrow_pos == 0) {
-            for (int k = 0; k != count; k++)
-                printw(" ");
-        }
-        if (arrow_pos > 0) {
-            for (int k = 0; k != (count / 2); k++)
-                printw(" ");
-            printw("0");
-            for (int l = 0; l != (count / 2); l++)
-                printw(" ");
-        }
-        printw("    ");
-        count = 0;
-    }
-    printw("O");
-    free(namelist);
 }
