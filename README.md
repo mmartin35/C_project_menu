@@ -1,1 +1,3 @@
-# terminal_interface
+# Terminal_menu
+## USAGE:
+	Optimizing reccurent commands.
