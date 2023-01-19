@@ -13,7 +13,10 @@
     #include <ncurses.h>
     #include <stdlib.h>
 
+    void main_menu(void);
     void setup_options(int i);
-
-
+    void github_menu(void);
+    void github_options(int i);
+    void intra_menu(void);
+    void intra_options(int i);
 #endif
