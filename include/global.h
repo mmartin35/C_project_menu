@@ -22,9 +22,9 @@
     } global_t;
 
     void main_menu(global_t *global);
-    void setup_options(int i);
-    void github_menu(void);
-    void github_options(int i);
-    void intra_menu(void);
-    void intra_options(int i);
+    void setup_options(global_t *global, int i);
+    void github_menu(global_t *global);
+    void github_options(global_t *global, int i);
+    void intra_menu(global_t *global);
+    void intra_options(global_t *global, int i);
 #endif

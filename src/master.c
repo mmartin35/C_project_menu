@@ -57,17 +57,17 @@ void main_menu(global_t *global)
     }
     delwin(win);
     endwin();
-    setup_options(i);
+    setup_options(global, i);
 }
 
-void setup_options(int i)
+void setup_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
-		    system("cp ~/GIT/epitech/epitech_src/GET_LIB/* .");
+		    system("cp -r ~/GIT/epitech/epitech_src/GET_LIB/* .");
 		    break;
 	    case 1:
-		    system("cp ~/GIT/epitech_src/GET_LIB/Makefile .");
+		    system("cp -r ~/GIT/epitech_src/GET_LIB/Makefile .");
 		    break;
 	    case 2:
 		    system("~/GIT/dotfile/scripts/epitech/builders/builderC.sh");
@@ -76,10 +76,10 @@ void setup_options(int i)
 		    system("~/GIT/dotfile/scripts/epitech/coding-style-checker/coding-style.sh . .");
 		    break;
 	    case 4:
-		    github_menu();
+		    github_menu(global);
 		    break;
 	    case 5:
-		    intra_menu();
+		    intra_menu(global);
 		    break;
 	    case 6:
 		    system("");

@@ -8,7 +8,7 @@
 */
 #include "../include/global.h"
 
-void github_menu() {
+void github_menu(global_t *global) {
     WINDOW *win;
     char list[4][7] = { "Page", "Auto", "Man", "Back" };
     char item[8];
@@ -49,10 +49,10 @@ void github_menu() {
     }
     delwin(win);
     endwin();
-    github_options(i);
+    github_options(global, i);
 }
 
-void github_options(int i)
+void github_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
@@ -65,7 +65,7 @@ void github_options(int i)
 		    system("~/GIT/dotfile/scripts/utils/github/manual.sh");
 		    break;
 	    case 3:
-		    main_menu();
+		    main_menu(global);
 		    break;
     }
 }

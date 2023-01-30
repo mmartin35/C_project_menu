@@ -8,7 +8,8 @@
 */
 #include "../include/global.h"
 
-void intra_menu() {
+void intra_menu(global_t *global)
+{
     WINDOW *win;
     char list[4][7] = { "Main", "Log", "RDV", "Back" };
     char item[8];
@@ -49,10 +50,10 @@ void intra_menu() {
     }
     delwin(win);
     endwin();
-    intra_options(i);
+    intra_options(global, i);
 }
 
-void intra_options(int i)
+void intra_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
@@ -65,7 +66,7 @@ void intra_options(int i)
 		    system("firefox --new-tab https://intra.epitech.eu/planning/#");
 		    break;
 	    case 3:
-		    main_menu();
+		    main_menu(global);
 		    break;
     }
 }
