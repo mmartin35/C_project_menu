@@ -10,11 +10,12 @@
 
 int main()
 {
-    main_menu();
+    global_t global = {0};
+    main_menu(&global);
     return 0;
 }
 
-void main_menu()
+void main_menu(global_t *global)
 {
     WINDOW *win;
     char list[7][7] = { "GetAll", "GetMin", "Header", "CStyle", "Github", "Intra", "Exit" };
@@ -63,7 +64,7 @@ void setup_options(int i)
 {
     switch (i) {
 	    case 0:
-		    system("cp ~/GIT/epitech_src/GET_LIB/* .");
+		    system("cp ~/GIT/epitech/epitech_src/GET_LIB/* .");
 		    break;
 	    case 1:
 		    system("cp ~/GIT/epitech_src/GET_LIB/Makefile .");

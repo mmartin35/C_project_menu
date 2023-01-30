@@ -13,7 +13,15 @@
     #include <ncurses.h>
     #include <stdlib.h>
 
-    void main_menu(void);
+    typedef struct file_data {
+        char** active_file_arbo;
+    } file_data_t;
+
+    typedef struct global {
+        file_data_t file_data;
+    } global_t;
+
+    void main_menu(global_t *global);
     void setup_options(int i);
     void github_menu(void);
     void github_options(int i);
