@@ -10,15 +10,17 @@ SRC     =       $(shell find . -type f -name '*.c')
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	./libmy.a
+LIB	=	./libmy.a
+
+BIN	=	./menu
 
 CC	=	gcc
 
 CFLAGS	+=	-Wall -Wundef -g -lncurses
 
 all:	$(OBJ)
-	ar rc $(NAME) $(OBJ)
-	$(CC) -o menu ./src/master.c ./libmy.a $(CFLAGS)
-	rm -r $(OBJ) ./libmy.a
+	ar rc $(LIB) $(OBJ)
+	$(CC) -o $(BIN) ./src/master.c $(LIB) $(CFLAGS)
+	rm -r $(OBJ) $(LIB)
 
 re:     fclean all
