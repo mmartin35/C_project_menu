@@ -38,7 +38,7 @@ printf "%-2s\n\
 '## Made by' ": $email" \
 '## Creation date' ": $today at $time" \
 "${div2}" \
-'' 'SRC	=	$(wildcard *.c)' \
+'' 'SRC	=	$(shell find . -type f -name *.c)' \
 '' 'OBJ	=	$(SRC:.c=.o)' \
 '' "BIN	=	./$name" \
 '' 'LIB	=	./libmy.a' \
