@@ -16,11 +16,16 @@ BIN	=	./menu
 
 CC	=	gcc
 
-CFLAGS	+=	-Wall -Wundef -g -lncurses
+CFLAGS	+=	-g -Wall -Wundef -lncurses
 
 all:	$(OBJ)
 	ar rc $(LIB) $(OBJ)
 	$(CC) -o $(BIN) ./src/master.c $(LIB) $(CFLAGS)
-	rm -r $(OBJ) $(LIB)
 
-re:     fclean all
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(LIB) $(BIN)
+
+re:     clean all
