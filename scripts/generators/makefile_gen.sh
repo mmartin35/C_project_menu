@@ -47,7 +47,7 @@ printf "%-2s\n\
 '' 'all:		subsystem' \
 '		$(CC) -o $(BIN) ./src/master.c $(LIB) $(CFLAGS)' \
 '' 'subsystem:' \
-'		$(MAKE) -c lib' \
+'		$(MAKE) -C lib' \
 '' 'ccc:		all' \
 '		rm -rf $(OBJ) $(LIB)' \
 '' 'clean:' \
