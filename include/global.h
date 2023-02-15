@@ -14,12 +14,15 @@
     #include <stdlib.h>
 
     typedef struct file_data {
+        char* program_path;
         char** active_file_arbo;
     } file_data_t;
 
     typedef struct global {
         file_data_t file_data;
     } global_t;
+
+    #define program_path global->file_data.program_path
 
     void main_menu(global_t *global);
     void setup_options(global_t *global, int i);

@@ -18,6 +18,7 @@ int main()
 void main_menu(global_t *global)
 {
     WINDOW *win;
+    program_path = "~/GIT/personal/terminal_menu";
     char list[7][7] = { "Work", "Github", "Gen", "Check", "Intra", "Test", "Exit" };
     char item[8];
     int ch, i = 0;
