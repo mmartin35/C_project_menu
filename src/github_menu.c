@@ -59,10 +59,10 @@ void github_options(global_t *global, int i)
 		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("~/GIT/dotfile/scripts/utils/github/classic.sh");
+		    system("~/GIT/personal/terminal_menu/scripts/git/classic.sh");
 		    break;
 	    case 2:
-		    system("~/GIT/dotfile/scripts/utils/github/manual.sh");
+		    system("~/GIT/personal/terminal_menu/scripts/git/manual.sh");
 		    break;
 	    case 3:
 		    main_menu(global);
