@@ -27,4 +27,8 @@
     void github_options(global_t *global, int i);
     void intra_menu(global_t *global);
     void intra_options(global_t *global, int i);
+    void gen_menu(global_t *global);
+    void gen_options(global_t *global, int i);
+    void check_menu(global_t *global);
+    void check_options(global_t *global, int i);
 #endif

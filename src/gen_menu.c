@@ -10,7 +10,7 @@
 
 void gen_menu(global_t *global) {
     WINDOW *win;
-    char list[4][7] = { "Header", "Project", "Makefile", "Back" };
+    char list[4][7] = { "+head", "+lib", "+make", "Back" };
     char item[8];
     int ch, i = 0;
     initscr();
