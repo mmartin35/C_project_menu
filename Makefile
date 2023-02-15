@@ -22,6 +22,9 @@ all:	$(OBJ)
 	ar rc $(LIB) $(OBJ)
 	$(CC) -o $(BIN) ./src/master.c $(LIB) $(CFLAGS)
 
+install:all
+	rm -rf $(OBJ) $(LIB)
+
 clean:
 	rm -rf $(OBJ)
 

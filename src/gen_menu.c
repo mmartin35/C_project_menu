@@ -1,6 +1,6 @@
 /*
 ** Language        : C
-** Title           : master.c
+** Title           : gen_menu.c
 ** File description:
 ** <------------------------------------------->
 ** Made by         : matthieu1.martin@epitech.eu
@@ -8,23 +8,15 @@
 */
 #include "../include/global.h"
 
-int main()
-{
-    global_t global = {0};
-    main_menu(&global);
-    return 0;
-}
-
-void main_menu(global_t *global)
-{
+void gen_menu(global_t *global) {
     WINDOW *win;
-    char list[7][7] = { "Work", "Github", "Gen", "Check", "Intra", "Test", "Exit" };
+    char list[4][7] = { "Header", "Project", "Makefile", "Back" };
     char item[8];
     int ch, i = 0;
     initscr();
     win = newwin(10, 12, 1, 1);
     box(win, 0, 0);
-    for (i = 0; i < 7; i++) {
+    for (i = 0; i < 4; i++) {
         if (i == 0)
             wattron(win, A_STANDOUT);
         else
@@ -43,11 +35,11 @@ void main_menu(global_t *global)
         switch (ch) {
 		case KEY_UP:
 			i--;
-			i = (i < 0) ? 6 : i;
+			i = (i < 0) ? 3 : i;
 			break;
 		case KEY_DOWN:
 			i++;
-			i = (i > 6) ? 0 : i;
+			i = (i > 3) ? 0 : i;
 			break;
         }
         wattron(win, A_STANDOUT);
@@ -57,32 +49,23 @@ void main_menu(global_t *global)
     }
     delwin(win);
     endwin();
-    setup_options(global, i);
+    gen_options(global, i);
 }
 
-void setup_options(global_t *global, int i)
+void gen_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
-		    system("echo current work...");
+		    system("~/GIT/personal/terminal_menu/scripts/generators/header_gen.sh");
 		    break;
 	    case 1:
-		    github_menu(global);
+		    system("cp ~/GIT/epitech/Ressources/epitech_lib/template/* .");
 		    break;
 	    case 2:
-		    gen_menu(global);
+		    system("~/GIT/personal/terminal_menu/scripts/makefile_gen.sh");
 		    break;
 	    case 3:
-		    check_menu(global);
-		    break;
-	    case 4:
-		    intra_menu(global);
-		    break;
-	    case 5:
-		    system("echo test env...");
-		    break;
-	    case 6:
-		    system("");
+		    main_menu(global);
 		    break;
     }
 }
