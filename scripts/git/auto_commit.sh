@@ -41,7 +41,7 @@ exit 0
 echo "Push the current repository on github ? (y/a)"
 read status
 if [ $status == 'y' ];then
-	_get_gut_status
+	_get_git_status
 	_insert_comment
 	_check_empty_args
 	_format_and_push
