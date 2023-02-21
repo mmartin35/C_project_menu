@@ -8,11 +8,23 @@
 */
 #include "../include/global.h"
 
-int main()
+int main(int argc, char** argv)
 {
-    global_t global = {0};
-    main_menu(&global);
-    return 0;
+    if (argc == 1) {
+        global_t global = {0};
+        main_menu(&global);
+        return 0;
+    } else if (argc == 2 && strcmp(argv[1], "-h") == 0) {
+        print_help();
+        return 0;
+    } else
+        return 84;
+}
+
+void print_help()
+{
+    printf("This menu serves epitech students to simplify access to common used ressources in all our projects.\n");
+    printf("You must change the header and some other details in certain bash scripts to be able to use it perfectly\n");
 }
 
 void main_menu(global_t *global)

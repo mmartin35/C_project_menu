@@ -16,7 +16,7 @@ BIN	=	./menu
 
 CC	=	gcc
 
-CFLAGS	+=	-g -Wall -Wundef -lncurses
+CFLAGS	+=	-Wall -Wundef -lncurses
 
 all:	$(OBJ)
 	ar rc $(LIB) $(OBJ)
