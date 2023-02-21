@@ -15,32 +15,35 @@ _insert_comment() {
 _check_empty_args() {
 
 if [ -n $argsmofidy ];then
-	p_argsmod="> updating: $argsmod | "
+	p_argsmod="> updating: $argsmod "
 fi
 
 if [ -n $argsadd ];then
         git add .
-	p_argsadd="> added: $argsadd | "
+	p_argsadd="> added: $argsadd "
 fi
 
 if [ -n $argsdel ];then
 	git add .
-	p_argsdel="> removed: $argsdel | "
+	p_argsdel="> removed: $argsdel "
 fi
 
-p_comment="> comment: $comment | "
+p_comment="> comment: $comment "
 }
 
 _format_and_push() {
 git commit -m "$p_argsmod $p_comment $p_argsadd $p_argsdel"
 git push -u origin main
 echo "| git commit has been pushed |"
-exit 0
 }
 
 echo "Push the current repository on github ? (y/a)"
 read status
-if [ $status == 'y' ];then
+if [ -z $status ];then
+	echo "aborted"
+	exit 84
+fi
+if [ $status == "y" ];then
 	_get_git_status
 	_insert_comment
 	_check_empty_args
