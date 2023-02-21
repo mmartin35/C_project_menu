@@ -20,7 +20,7 @@ CFLAGS	+=	-Wall -Wundef -lncurses
 
 all:	$(OBJ)
 	ar rc $(LIB) $(OBJ)
-	$(CC) -o $(BIN) ./src/master.c $(LIB) $(CFLAGS)
+	$(CC) -o $(BIN) ./src/*.c $(LIB) $(CFLAGS)
 
 install:all
 	rm -rf $(OBJ) $(LIB)

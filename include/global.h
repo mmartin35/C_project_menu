@@ -12,6 +12,7 @@
 
     #include <ncurses.h>
     #include <stdlib.h>
+    #include <string.h>
 
     typedef struct file_data {
         char* program_path;
@@ -25,6 +26,7 @@
     #define program_path global->file_data.program_path
 
     void main_menu(global_t *global);
+    void print_help(void);
     void setup_options(global_t *global, int i);
     void github_menu(global_t *global);
     void github_options(global_t *global, int i);
