@@ -10,7 +10,7 @@
 
 void github_menu(global_t *global) {
     WINDOW *win;
-    char list[4][7] = { "Page", "Auto", "Man", "Back" };
+    char list[4][7] = { "Page", "Init", "Push", "Back" };
     char item[8];
     int ch, i = 0;
     initscr();
@@ -59,10 +59,10 @@ void github_options(global_t *global, int i)
 		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/terminal_menu/scripts/git/classic.sh");
+		    system("~/GIT/personal/terminal_menu/scripts/git/init.sh");
 		    break;
 	    case 2:
-		    system("~/GIT/personal/terminal_menu/scripts/git/manual.sh");
+		    system("~/GIT/personal/terminal_menu/scripts/git/auto_commit.sh");
 		    break;
 	    case 3:
 		    main_menu(global);
