@@ -59,7 +59,7 @@ void check_options(global_t *global, int i)
 		    system("firefox --new-tab ~/GIT/personal/terminal_menu/assets/pdf/epitech_c_coding_style.pdf &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/terminal_menu/scripts/coding_style.sh . .");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/coding_style.sh . .");
 		    break;
 	    case 2:
 		    system("echo man...");

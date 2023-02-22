@@ -10,13 +10,13 @@
 
 void github_menu(global_t *global) {
     WINDOW *win;
-    char list[4][7] = { "Page", "Init", "Push", "Back" };
+    char list[5][7] = { "Page", "Init", "Push", "Active", "Back" };
     char item[8];
     int ch, i = 0;
     initscr();
     win = newwin(10, 12, 1, 1);
     box(win, 0, 0);
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 5; i++) {
         if (i == 0)
             wattron(win, A_STANDOUT);
         else
@@ -35,11 +35,11 @@ void github_menu(global_t *global) {
         switch (ch) {
 		case KEY_UP:
 			i--;
-			i = (i < 0) ? 3 : i;
+			i = (i < 0) ? 4 : i;
 			break;
 		case KEY_DOWN:
 			i++;
-			i = (i > 3) ? 0 : i;
+			i = (i > 4) ? 0 : i;
 			break;
         }
         wattron(win, A_STANDOUT);
@@ -59,12 +59,15 @@ void github_options(global_t *global, int i)
 		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/terminal_menu/scripts/git/init.sh");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/git/init.sh");
 		    break;
 	    case 2:
-		    system("~/GIT/personal/terminal_menu/scripts/git/auto_commit.sh");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/git/auto_commit.sh");
 		    break;
 	    case 3:
+		    system("ranger --selectfile=/home/user35p74a/GIT/epitech/");
+		    break;
+	    case 4:
 		    main_menu(global);
 		    break;
     }

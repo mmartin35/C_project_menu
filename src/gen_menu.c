@@ -56,13 +56,13 @@ void gen_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
-		    system("~/GIT/personal/terminal_menu/scripts/generators/header_gen.sh");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/generators/header_gen.sh");
 		    break;
 	    case 1:
 		    system("cp ~/GIT/epitech/Ressources/epitech_lib/template/* .");
 		    break;
 	    case 2:
-		    system("~/GIT/personal/terminal_menu/scripts/makefile_gen.sh");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/makefile_gen.sh");
 		    break;
 	    case 3:
 		    main_menu(global);
