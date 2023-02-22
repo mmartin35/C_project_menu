@@ -59,7 +59,7 @@ void github_options(global_t *global, int i)
 		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/epitech_facility_menu/scripts/git/init.sh");
+		    system("~/GIT/personal/epitech_facility_menu/scripts/git/init_repo.sh");
 		    break;
 	    case 2:
 		    system("~/GIT/personal/epitech_facility_menu/scripts/git/auto_commit.sh");
