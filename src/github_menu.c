@@ -65,7 +65,7 @@ void github_options(global_t *global, int i)
 		    system("~/GIT/personal/epitech_facility_menu/scripts/git/auto_commit.sh");
 		    break;
 	    case 3:
-		    system("ranger --selectfile=/home/user35p74a/GIT/epitech/");
+		    system("ranger --selectfile=/home/user35p74a/GIT/epitech/-");
 		    break;
 	    case 4:
 		    main_menu(global);
