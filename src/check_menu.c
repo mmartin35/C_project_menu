@@ -56,10 +56,10 @@ void check_options(global_t *global, int i)
 {
     switch (i) {
 	    case 0:
-		    system("firefox --new-tab ~/GIT/personal/terminal_menu/assets/pdf/epitech_c_coding_style.pdf &");
+		    system("firefox --new-tab ~/GIT/personal/C_project_menu/assets/pdf/epitech_c_coding_style.pdf &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/epitech_facility_menu/scripts/coding_style.sh . .");
+		    system("~/GIT/personal/C_project_menu/scripts/coding_style.sh . .");
 		    break;
 	    case 2:
 		    system("echo man...");

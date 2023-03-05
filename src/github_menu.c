@@ -59,10 +59,10 @@ void github_options(global_t *global, int i)
 		    system("firefox --new-tab https://github.com/ &");
 		    break;
 	    case 1:
-		    system("~/GIT/personal/epitech_facility_menu/scripts/git/init_repo.sh");
+		    system("~/GIT/personal/C_project_menu/scripts/git/init_repo.sh");
 		    break;
 	    case 2:
-		    system("~/GIT/personal/epitech_facility_menu/scripts/git/auto_commit.sh");
+		    system("~/GIT/personal/C_project_menu/scripts/git/auto_commit.sh");
 		    break;
 	    case 3:
 		    system("ranger --selectfile=/home/user35p74a/GIT/epitech/-");
