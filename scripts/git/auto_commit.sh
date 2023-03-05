@@ -36,7 +36,7 @@ git commit -m "$p_argsmod $p_comment $p_argsadd $p_argsdel"
 echo "which branch to push ?"
 read branch_name
 if [ -z $branch_name ];then
-	$branch_name = main
+	$branch_name="main"
 fi
 git push -u origin $branch_name
 echo "| git commit has been pushed |"
