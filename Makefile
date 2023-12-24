@@ -1,18 +1,10 @@
-##
-## EPITECH PROJECT, 2022
-## Script: makefile
-## File description:
-## Email: matthieu1.martin@epitech.eu
-## Made by: Matthieu MARTIN
-##
-
 SRC     =       $(shell find . -type f -name '*.c')
 
 OBJ	=	$(SRC:.c=.o)
 
-LIB	=	./libmy.a
+LIB	=	./precomp.a
 
-BIN	=	./menu
+BIN	=	./mnu
 
 CC	=	gcc
 
