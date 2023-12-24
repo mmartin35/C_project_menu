@@ -8,7 +8,7 @@
 */
 #include "../include/global.h"
 
-void print_help()
+void print_help(void)
 {
     printf("This menu serves epitech students to simplify access to common used ressources in all our projects.\n");
     printf("You must change the header and some other details in certain bash scripts to be able to use it perfectly\n");

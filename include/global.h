@@ -22,3 +22,6 @@ void github_menu(void);
 void intra_menu(void);
 void gen_menu(void);
 void check_menu(void);
+
+const char *active_proj = ".";
+const char *test_env = ".";
