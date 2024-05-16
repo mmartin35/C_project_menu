@@ -8,6 +8,9 @@
 */
 #include "../include/global.h"
 
+const char *active_proj = ".";
+const char *test_env = ".";
+
 void print_help(void)
 {
     printf("This menu serves epitech students to simplify access to common used ressources in all our projects.\n");

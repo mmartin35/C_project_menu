@@ -4,7 +4,7 @@ OBJ	=	$(SRC:.c=.o)
 
 LIB	=	./precomp.a
 
-BIN	=	./mnu
+BIN	=	./menu
 
 CC	=	gcc
 
